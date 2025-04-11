@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>GMusicLearn - Aprende Piano</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+    .key {
+      width: 40px;
+      height: 150px;
+      background: white;
+      border: 1px solid black;
+      display: inline-block;
+      margin: 1px;
+      color: black;
+    }
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bem-vindo ao GMusicLearn</h1>
+  <p>Aprende piano e música de forma divertida!</p>
+
+  <div id="piano">
+    <div class="key" onclick="playNote('C')">C</div>
+    <div class="key" onclick="playNote('D')">D</div>
+    <div class="key" onclick="playNote('E')">E</div>
+    <div class="key" onclick="playNote('F')">F</div>
+    <div class="key" onclick="playNote('G')">G</div>
+    <div class="key" onclick="playNote('A')">A</div>
+    <div class="key" onclick="playNote('B')">B</div>
+  </div>
+
+  <script>
+    function playNote(note) {
+      alert("Nota tocada: " + note);
+    }
+  </script>
+</body>
+</html>
