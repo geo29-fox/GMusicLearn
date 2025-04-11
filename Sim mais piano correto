@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>GMusicLearn - Aprende Piano</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .piano {
+      position: relative;
+      width: 420px;
+      height: 200px;
+      margin: auto;
+    }
+
+    .white-key {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 200px;
+      background: white;
+      border: 1px solid #000;
+      box-sizing: border-box;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .black-key {
+      position: absolute;
+      width: 40px;
+      height: 120px;
+      background: black;
+      color: white;
+      text-align: center;
+      line-height: 110px;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    /* Posicionamento das teclas pretas */
+    .Csharp { left: 40px; }
+    .Dsharp { left: 100px; }
+    .Fsharp { left: 220px; }
+    .Gsharp { left: 280px; }
+    .Asharp { left: 340px; }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bem-vindo ao GMusicLearn</h1>
+  <p>Clica nas teclas para ouvir o som real de piano</p>
+
+  <div class="piano">
+    <!-- Teclas Brancas -->
+    <div class="white-key" onclick="playNote('C')">C</div>
+    <div class="white-key" onclick="playNote('D')">D</div>
+    <div class="white-key" onclick="playNote('E')">E</div>
+    <div class="white-key" onclick="playNote('F')">F</div>
+    <div class="white-key" onclick="playNote('G')">G</div>
+    <div class="white-key" onclick="playNote('A')">A</div>
+    <div class="white-key" onclick="playNote('B')">B</div>
+
+    <!-- Teclas Pretas -->
+    <div class="black-key Csharp" onclick="playNote('Csharp')">C#</div>
+    <div class="black-key Dsharp" onclick="playNote('Dsharp')">D#</div>
+    <div class="black-key Fsharp" onclick="playNote('Fsharp')">F#</div>
+    <div class="black-key Gsharp" onclick="playNote('Gsharp')">G#</div>
+    <div class="black-key Asharp" onclick="playNote('Asharp')">A#</div>
+  </div>
+
+  <script>
+    function playNote(note) {
+      const audio = new Audio(`https://piano-sounds.s3.eu-west-3.amazonaws.com/${note}.mp3`);
+      audio.play().catch(e => {
+        alert("Som não pode ser carregado. Verifica tua ligação à internet.");
+        console.error(e);
+      });
+    }
+  </script>
+</body>
+</html>
