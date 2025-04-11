@@ -1,94 +1,111 @@
-<!DOCTYPE html>
-<html lang="pt">
+<!DOCTYPE html><html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>GMusicLearn - Aprende Piano</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GMusicLearn</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
       color: white;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      padding: 20px;
       text-align: center;
+      background-color: #111;
+    }
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+    nav a {
+      margin: 0 10px;
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
       padding: 30px;
+      text-align: center;
     }
-
     .piano {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
       position: relative;
-      width: 420px;
       height: 200px;
-      margin: auto;
     }
-
-    .white-key {
+    .white-key, .black-key {
+      border: 1px solid #000;
       position: relative;
-      display: inline-block;
+    }
+    .white-key {
       width: 60px;
       height: 200px;
       background: white;
-      border: 1px solid #000;
-      box-sizing: border-box;
       z-index: 1;
-      cursor: pointer;
     }
-
     .black-key {
-      position: absolute;
       width: 40px;
       height: 120px;
       background: black;
-      color: white;
-      text-align: center;
-      line-height: 110px;
+      position: absolute;
+      top: 0;
       z-index: 2;
-      cursor: pointer;
     }
-
-    /* Posicionamento das teclas pretas */
-    .Csharp { left: 40px; }
-    .Dsharp { left: 100px; }
-    .Fsharp { left: 220px; }
-    .Gsharp { left: 280px; }
-    .Asharp { left: 340px; }
-
-    h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 16px;
+    .black-key-label {
+      color: white;
+      font-size: 12px;
+      position: absolute;
+      bottom: 5px;
+      left: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>Bem-vindo ao GMusicLearn</h1>
-  <p>Clica nas teclas para ouvir o som real de piano</p>
+  <header>
+    <h1>Bem-vindo ao GMusicLearn</h1>
+    <p>Teu espaço para aprender música de forma divertida e interativa!</p>
+    <nav>
+      <a href="#piano">Piano</a>
+      <a href="#aulas">Aulas</a>
+      <a href="#comunidade">Comunidade</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+  </header>  <section id="piano">
+    <h2>Toca o Piano</h2>
+    <p>Clica nas teclas para ouvir os sons reais de um piano.</p>
+    <div class="piano">
+      <!-- Teclas brancas -->
+      <div class="white-key" onclick="playSound('C')"></div>
+      <div class="white-key" onclick="playSound('D')"></div>
+      <div class="white-key" onclick="playSound('E')"></div>
+      <div class="white-key" onclick="playSound('F')"></div>
+      <div class="white-key" onclick="playSound('G')"></div>
+      <div class="white-key" onclick="playSound('A')"></div>
+      <div class="white-key" onclick="playSound('B')"></div><!-- Teclas pretas -->
+  <div class="black-key" style="left: 40px;" onclick="playSound('Csharp')"><span class="black-key-label">C#</span></div>
+  <div class="black-key" style="left: 100px;" onclick="playSound('Dsharp')"><span class="black-key-label">D#</span></div>
+  <div class="black-key" style="left: 220px;" onclick="playSound('Fsharp')"><span class="black-key-label">F#</span></div>
+  <div class="black-key" style="left: 280px;" onclick="playSound('Gsharp')"><span class="black-key-label">G#</span></div>
+  <div class="black-key" style="left: 340px;" onclick="playSound('Asharp')"><span class="black-key-label">A#</span></div>
+</div>
 
-  <div class="piano">
-    <!-- Teclas Brancas -->
-    <div class="white-key" onclick="playNote('C')">C</div>
-    <div class="white-key" onclick="playNote('D')">D</div>
-    <div class="white-key" onclick="playNote('E')">E</div>
-    <div class="white-key" onclick="playNote('F')">F</div>
-    <div class="white-key" onclick="playNote('G')">G</div>
-    <div class="white-key" onclick="playNote('A')">A</div>
-    <div class="white-key" onclick="playNote('B')">B</div>
-
-    <!-- Teclas Pretas -->
-    <div class="black-key Csharp" onclick="playNote('Csharp')">C#</div>
-    <div class="black-key Dsharp" onclick="playNote('Dsharp')">D#</div>
-    <div class="black-key Fsharp" onclick="playNote('Fsharp')">F#</div>
-    <div class="black-key Gsharp" onclick="playNote('Gsharp')">G#</div>
-    <div class="black-key Asharp" onclick="playNote('Asharp')">A#</div>
-  </div>
-
-  <script>
-    function playNote(note) {
-      const audio = new Audio(`https://piano-sounds.s3.eu-west-3.amazonaws.com/${note}.mp3`);
-      audio.play().catch(e => {
-        alert("Som não pode ser carregado. Verifica tua ligação à internet.");
-        console.error(e);
-      });
+  </section>  <section id="aulas">
+    <h2>Aulas Interativas</h2>
+    <p>Conteúdo dividido por níveis para iniciantes, intermediários e avançados. Em breve!</p>
+  </section>  <section id="comunidade">
+    <h2>Comunidade</h2>
+    <p>Encontra outros músicos, compartilha dúvidas, ideias e colaborações. (A ser implementado)</p>
+  </section>  <section id="sobre">
+    <h2>Sobre o GMusicLearn</h2>
+    <p>Este projeto nasceu para ajudar músicos a aprender de forma prática, online e gratuita. Vem aprender com a gente!</p>
+  </section>  <script>
+    function playSound(note) {
+      const audio = new Audio(`sounds/${note}.mp3`);
+      audio.play();
     }
-  </script>
-</body>
+  </script></body>
 </html>
