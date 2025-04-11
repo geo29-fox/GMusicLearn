@@ -1,15 +1,62 @@
-<!DOCTYPE html><html lang="pt">
+<!DOCTYPE html>
+<html lang="pt">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GMusicLearn</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('notas-musicais.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1em 0;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 1em 0;
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #00ffff;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 2em;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    footer {
+      margin-top: 3em;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1em 0;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <nav class="navbar">
-      <h1>GMusicLearn</h1>
-      <ul class="nav-links">
+    <h1>GMusicLearn</h1>
+    <nav>
+      <ul>
         <li><a href="index.html">Início</a></li>
         <li><a href="piano.html">Piano</a></li>
         <li><a href="aulas.html">Aulas</a></li>
@@ -17,14 +64,16 @@
         <li><a href="sobre.html">Sobre</a></li>
       </ul>
     </nav>
-  </header>  <main class="home">
-    <section class="hero">
-      <h2>Bem-vindo ao GMusicLearn</h2>
-      <p>Teu espaço para aprender música de forma divertida e interativa!</p>
-      <a href="piano.html" class="btn">Explora o Piano</a>
-    </section>
-  </main>  <footer>
-    <p>&copy; 2025 GMusicLearn. Todos os direitos reservados.</p>
+  </header>
+
+  <section>
+    <h2>Bem-vindo ao GMusicLearn</h2>
+    <p>Teu espaço para aprender música de forma divertida e interativa!</p>
+    <p><a href="piano.html" style="color: yellow;">Explora o Piano</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 GMusicLearn. Todos os direitos reservados.</p>
   </footer>
 </body>
 </html>
